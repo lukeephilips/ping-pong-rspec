@@ -4,12 +4,15 @@ require('pry')
 
 describe('String#ping_pong') do
   it("checks for non-numbers") do
-    expect(("cow").ping_pong()).to(eq(0))
+    expect(("cow").ping_pong()).to(eq([0]))
   end
   it("converts strings to numbers") do
-    expect(("3").ping_pong()).to(eq(3))
+    expect(("3").ping_pong()).to(eq([0,1,2,3]))
   end
   it("checks for negative numbers and converts to abs value") do
-    expect(("-3").ping_pong()).to(eq(3))
+    expect(("-3").ping_pong()).to(eq([0,1,2,3]))
+  end
+  it("returns array of numbers from 0 up to user entry number") do
+    expect(("3").ping_pong()).to(eq([0,1,2,3]))
   end
 end
